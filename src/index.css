@@ -1,0 +1,19 @@
+html {
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Base font */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212; /* Matches --background-color */
+  color: #e0e0e0;      /* Matches --text-color */
+  line-height: 1.6;
+  opacity: 0; /* Initially hidden for preloader effect */
+  transition: opacity 0.5s ease-in-out;
+  overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
+
+body.loaded {
+  opacity: 1;
+}
