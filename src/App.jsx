@@ -410,7 +410,7 @@ const GlobalStyles = () => (
     .btn-secondary { background-color: transparent; color: var(--primary-color); box-shadow: none; }
     .btn-secondary:hover { background-color: rgba(0, 170, 255, 0.15); color: var(--primary-color); border-color: var(--primary-color); box-shadow: 0 6px 15px rgba(0, 170, 255, 0.2); }
 
-    .reveal-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity var(--animation-duration) var(--animation-timing), transform var(--animation-duration) var(--animation-timing); }
+    .reveal-on-scroll { opacity: 1; transform: translateY(20px); transition: opacity var(--animation-duration) var(--animation-timing), transform var(--animation-duration) var(--animation-timing); }
     .reveal-on-scroll.revealed { opacity: 1; transform: translateY(0); }
     
     .emoji-title-anim, .emoji-heading-anim, .emoji-subheading-anim, .list-icon, .themed-bullet { display: inline-block; opacity: 0; transform: scale(0.5) rotate(-15deg); transition: opacity var(--animation-duration-fast) var(--animation-timing), transform var(--animation-duration-fast) var(--animation-timing); }
