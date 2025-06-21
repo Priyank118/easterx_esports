@@ -33,7 +33,8 @@ const GalleryPage = ({ navigateToPage }) => {
             {images.map((image, index) => (
                 <div
                     key={image.id}
-                    
+                    ref={el => el && observeElement(el)}
+                    className="gallery-image-placeholder-wrapper reveal-on-scroll"
                     style={{ transitionDelay: `${index * 75}ms` }}
                 >
                     <img
