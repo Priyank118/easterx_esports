@@ -18,7 +18,7 @@ const HighlightsSection = ({ onNavLinkClick }) => {
                         key={index}
                         ref={el => el && observeElement(el)}
                         className="card reveal-on-scroll"
-                        style={{ transitionDelay: `${index * 100}ms` }}
+                       
                     >
                         <img
                             src={item.icon}
