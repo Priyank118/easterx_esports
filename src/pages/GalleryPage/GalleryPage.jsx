@@ -16,26 +16,26 @@ const GalleryPage = ({ navigateToPage }) => {
     const citronics2k24Images = generatePlaceholders("Citronics 2K24", "citronics2k24", "pic", 12, "jpg");
     const citronics2k25Images = generatePlaceholders("Citronics 2K25", "citronics2k25", "pic", 12, "jpg");
 
+    // Refs for the sections we want to animate
     const pageTitleRef = useRef(null);
-    const section2k24TitleRef = useRef(null);
-    const section2k25TitleRef = useRef(null);
+    const section2k24Ref = useRef(null);
+    const section2k25Ref = useRef(null);
     const backButtonRef = useRef(null);
 
     useEffect(() => {
         if (pageTitleRef.current) observeElement(pageTitleRef.current);
-        if (section2k24TitleRef.current) observeElement(section2k24TitleRef.current);
-        if (section2k25TitleRef.current) observeElement(section2k25TitleRef.current);
+        if (section2k24Ref.current) observeElement(section2k24Ref.current);
+        if (section2k25Ref.current) observeElement(section2k25Ref.current);
         if (backButtonRef.current) observeElement(backButtonRef.current);
     }, [observeElement]);
 
+    // This function is now much simpler. No refs or styles needed here.
     const renderImageGrid = (images) => (
         <div className="gallery-grid">
-            {images.map((image, index) => (
+            {images.map((image) => (
                 <div
                     key={image.id}
-                    ref={el => el && observeElement(el)}
-                    className="gallery-image-placeholder-wrapper reveal-on-scroll"
-                    style={{ transitionDelay: `${index * 75}ms` }}
+                    className="gallery-image-placeholder-wrapper"
                 >
                     <img
                         src={image.src}
@@ -60,15 +60,17 @@ const GalleryPage = ({ navigateToPage }) => {
                 <span className="emoji-title-anim">🖼️</span> Event Gallery
             </h2>
 
-            <section className="gallery-event-section">
-                <h3 ref={section2k24TitleRef} className="gallery-section-title reveal-on-scroll">
+            {/* We apply the reveal logic to the parent section */}
+            <section ref={section2k24Ref} className="gallery-event-section reveal-on-scroll">
+                <h3 className="gallery-section-title">
                     Citronics 2K24 Highlights
                 </h3>
                 {renderImageGrid(citronics2k24Images)}
             </section>
 
-            <section className="gallery-event-section">
-                <h3 ref={section2k25TitleRef} className="gallery-section-title reveal-on-scroll" style={{ transitionDelay: '0.2s' }}>
+            {/* We apply the reveal logic to the parent section */}
+            <section ref={section2k25Ref} className="gallery-event-section reveal-on-scroll" style={{ transitionDelay: '0.2s' }}>
+                <h3 className="gallery-section-title">
                     Citronics 2K25 Showcase
                 </h3>
                 {renderImageGrid(citronics2k25Images)}
