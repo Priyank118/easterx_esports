@@ -19,8 +19,7 @@ const TeamLineup = () => {
                 {teamMembers.map((member, index) => (
                     <div
                         key={member.name}
-                        ref={el => el && observeElement(el)}
-                        className="card player-card reveal-on-scroll"
+                      
                         style={{ transitionDelay: `${index * 100}ms` }}
                     >
                         <img
