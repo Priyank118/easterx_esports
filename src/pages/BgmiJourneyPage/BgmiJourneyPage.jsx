@@ -26,8 +26,7 @@ const BgmiJourneyPage = ({ navigateToPage }) => {
         return items.map((item, index) => (
             <li
                 key={index}
-                ref={el => el && observeElement(el)}
-                className="reveal-on-scroll"
+                
                 style={{
                     transitionDelay: `${baseDelay + index * 100}ms`,
                     display: 'flex',
@@ -46,8 +45,7 @@ const BgmiJourneyPage = ({ navigateToPage }) => {
         return items.map((item, index) => (
             <li
                 key={index}
-                ref={el => el && observeElement(el)}
-                className="reveal-on-scroll"
+                
                 style={{
                     transitionDelay: `${baseDelay + index * 100}ms`,
                     display: 'flex',
