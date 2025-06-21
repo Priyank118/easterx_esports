@@ -24,7 +24,7 @@ const HighlightsSection = ({ onNavLinkClick }) => {
                             src={item.icon}
                             alt={item.alt}
                             className="icon"
-                            style={{height: '60px', width: '60px', margin: '0 auto 25px auto'}}
+                            style={{height: '300px', width: '300px', margin: '0 auto 25px auto'}}
                             onError={(e) => { e.target.onerror = null; e.target.src = `https://placehold.co/60x60/242424/00aaff?text=ICON${index + 1}&font=roboto`; }}
                         />
                         <h3>{item.title}</h3>
