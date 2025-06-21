@@ -1,0 +1,36 @@
+import { useEffect, useRef } from 'react';
+
+const useScrollReveal = (threshold = 0.1) => {
+    const observerRef = useRef(null);
+
+    useEffect(() => {
+        const currentObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                    } else {
+                        // entry.target.classList.remove('revealed'); // To re-animate on scroll up
+                    }
+                });
+            }, { threshold }
+        );
+        observerRef.current = currentObserver;
+
+        return () => {
+            if (currentObserver) {
+                currentObserver.disconnect();
+            }
+        };
+    }, [threshold]);
+
+    const observeElement = (element) => {
+        if (element && observerRef.current) {
+            observerRef.current.observe(element);
+        }
+    };
+
+    return { observeElement };
+};
+
+export default useScrollReveal;
