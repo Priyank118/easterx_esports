@@ -24,11 +24,15 @@ const useScrollReveal = (threshold = 0.1) => {
         };
     }, [threshold]);
 
-    const observeElement = (element) => {
-        if (element && observerRef.current) {
-            observerRef.current.observe(element);
-        }
-    };
+
+const observeElement = (element) => {
+  if (element && observerRef.current) {
+    // Add a small delay to ensure the browser has painted the element
+    setTimeout(() => {
+      observerRef.current.observe(element);
+    }, 100); // 100 milliseconds is usually more than enough
+  }
+};
 
     return { observeElement };
 };
