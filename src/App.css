@@ -34,28 +34,4 @@
 }
 
 
-/* ============================================= */
-/* FINAL Card Animation System (Add this to the bottom)
-/* ============================================= */
-
-/* 1. By default, cards inside a section are hidden */
-.section .card {
-  opacity: 1;
-  transform: translateY(20px);
-  transition: opacity 0.6s var(--animation-timing), transform 0.6s var(--animation-timing);
-}
-
-/* 2. When the parent section is revealed, the cards become visible */
-.section.revealed .card {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 3. Stagger the card animation for a nice effect */
-.section.revealed .card:nth-child(1) { transition-delay: 0.1s; }
-.section.revealed .card:nth-child(2) { transition-delay: 0.2s; }
-.section.revealed .card:nth-child(3) { transition-delay: 0.3s; }
-.section.revealed .card:nth-child(4) { transition-delay: 0.4s; }
-.section.revealed .card:nth-child(5) { transition-delay: 0.5s; }
-.section.revealed .card:n-child(6) { transition-delay: 0.6s; }
 
