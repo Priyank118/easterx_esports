@@ -40,7 +40,7 @@
 
 /* 1. By default, cards inside a section are hidden */
 .section .card {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(20px);
   transition: opacity 0.6s var(--animation-timing), transform 0.6s var(--animation-timing);
 }
