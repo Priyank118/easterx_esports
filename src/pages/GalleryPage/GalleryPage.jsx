@@ -33,7 +33,7 @@ const GalleryPage = ({ navigateToPage }) => {
             {images.map((image, index) => (
                 <div
                     key={image.id}
-                   
+                    
                     style={{ transitionDelay: `${index * 75}ms` }}
                 >
                     <img
@@ -55,25 +55,25 @@ const GalleryPage = ({ navigateToPage }) => {
 
     return (
         <div className="container gallery-page-container">
-            <h2 ref={pageTitleRef} 
+            <h2 ref={pageTitleRef} className="gallery-page-title reveal-on-scroll">
                 <span className="emoji-title-anim">🖼️</span> Event Gallery
             </h2>
 
             <section className="gallery-event-section">
-                <h3 ref={section2k24TitleRef} 
+                <h3 ref={section2k24TitleRef} className="gallery-section-title reveal-on-scroll">
                     Citronics 2K24 Highlights
                 </h3>
                 {renderImageGrid(citronics2k24Images)}
             </section>
 
             <section className="gallery-event-section">
-                <h3 ref={section2k25TitleRef}  style={{ transitionDelay: '0.2s' }}>
+                <h3 ref={section2k25TitleRef} className="gallery-section-title reveal-on-scroll" style={{ transitionDelay: '0.2s' }}>
                     Citronics 2K25 Showcase
                 </h3>
                 {renderImageGrid(citronics2k25Images)}
             </section>
 
-            <div ref={backButtonRef}  style={{ textAlign: 'center', marginTop: '40px', marginBottom: '40px', transitionDelay: '0.3s' }}>
+            <div ref={backButtonRef} className="reveal-on-scroll" style={{ textAlign: 'center', marginTop: '40px', marginBottom: '40px', transitionDelay: '0.3s' }}>
                 <button className="btn btn-secondary" onClick={() => navigateToPage('home')}>Back to Home</button>
             </div>
         </div>
