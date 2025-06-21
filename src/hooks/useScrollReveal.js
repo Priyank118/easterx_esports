@@ -3,18 +3,19 @@ import { useEffect, useRef } from 'react';
 const useScrollReveal = (threshold = 0.1) => {
     const observerRef = useRef(null);
 
-    useEffect(() => {
-        const currentObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('revealed');
-                    } else {
-                        // entry.target.classList.remove('revealed'); // To re-animate on scroll up
-                    }
-                });
-            }, { threshold }
-        );
+     useEffect(() => {
+    const currentObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            // ONCE IT'S REVEALED, STOP WATCHING IT.
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold }
+    );
         observerRef.current = currentObserver;
 
         return () => {
